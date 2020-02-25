@@ -7,6 +7,8 @@ class Guest(models.Model):
     MobileNumber = models.BigIntegerField()
     CheckIn = models.DateField()
     CheckOut = models.DateField()
+    def __str__(self):
+        return self.Name
 
     Room_Choices = [
     ('PREMIUM_KHODIDHAR', "Premium @ Khodidhar"),
