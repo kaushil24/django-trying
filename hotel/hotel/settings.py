@@ -25,7 +25,7 @@ SECRET_KEY = 'bw0owzea+c5lpw*&qmbh5%g5)3&zxg!gpbgxwo$a*-@r#uw7l%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.pythonanywhere.com','127.0.0.1','192.168.1.20']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'guests',
     'rooms',
     'payments',
+    'Food',
 ]
 
 MIDDLEWARE = [

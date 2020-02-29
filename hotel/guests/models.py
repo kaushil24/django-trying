@@ -10,6 +10,8 @@ class Guest(models.Model):
     def __str__(self):
         return self.Name
 
+    RoomCategory =  models.ForeignKey('rooms.RoomType',on_delete=models.CASCADE)
+'''
     Room_Choices = [
     ('PREMIUM_KHODIDHAR', "Premium @ Khodidhar"),
     ('ECONOMY_KHODIDHAR', "Economy @ Khodidhar"),
@@ -35,7 +37,9 @@ class Guest(models.Model):
         max_length =64,
         choices = No_of_TypeRooms
     )
-    '''if(TypeofRooms ==1):
+'''
+'''     
+        if(TypeofRooms ==1):
         NumberofRooms = models.IntegerField()
         RoomCategory1 = models.CharField(
         max_length=64,
