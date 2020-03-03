@@ -1,30 +1,18 @@
 from django.db import models
 
-# Create your models here.
 class Guest(models.Model):
     Name =  models.CharField(max_length=120)
     EmailID = models.EmailField()
     MobileNumber = models.BigIntegerField()
     CheckIn = models.DateField()
     CheckOut = models.DateField()
+    RoomCategory =  models.ForeignKey('rooms.RoomType',on_delete=models.CASCADE)
+    Number_Of_Rooms  = models.IntegerField()
+    Photo_ID = models.ImageField(upload_to='documents/%Y/%d/%m/')
     def __str__(self):
         return self.Name
-
-    RoomCategory =  models.ForeignKey('rooms.RoomType',on_delete=models.CASCADE)
 '''
-    Room_Choices = [
-    ('PREMIUM_KHODIDHAR', "Premium @ Khodidhar"),
-    ('ECONOMY_KHODIDHAR', "Economy @ Khodidhar"),
-    ("DORTOIR_KHODIDHAR", "Dortoir @ Khodidhar"),
-    ("SPECIAL" , "Special"),
-    ("PREMIUM_NAGAO", "Premium @ Nagao"),
-    ("ECONOMY_NAGAO", "Economy @ Nagao")
-    ]
-    RoomCategory = models.CharField(
-    max_length=64,
-    choices = Room_Choices,
-    default="PREMIUM_KHODIDHAR"
-    )
+    
 
     No_of_TypeRooms = [
     ('1',"1"),
